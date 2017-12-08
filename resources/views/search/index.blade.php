@@ -1,20 +1,22 @@
-@extends('layouts.app')
+@extends('layouts.search')
 
 @section('content')
-	<h1>Mitä mulla on kaapissa?</h1>
-	<form action="{{ action('SearchController@search') }}" method="post" class="form-horizontal">
-		{{ csrf_field() }}
-		<div class="form-group">
-			<div class="col-sm-12">
-				<input type="text" name="keyword" id="keyword" class="form-control" placeholder="Aines" autocomplete="off">
+	<form action="{{ action('SearchController@search') }}" method="get" class="form-horizontal">
+		<input type="hidden" data-role="array" name="ingredients" value="">
+		<div class="col-sm-12">
+			<div class="form-group">
+					<input type="text" id="keyword" class="form-control" placeholder="Aines" autocomplete="off">
+					<ul id="foods"></ul>
 			</div>
 		</div>
-		<div class="form-group">
-			<ul id="foods">
-			</ul>
-		</div>
-		<div class="form-group">
+		<div class="col-sm-12 ingredient-list">
+			<h3>Lista</h3>
 			<ul id="selected"></ul>
+		</div>
+		<div class="col-sm-12">
+			<div class="form-group text-center">
+				<button type="submit" class="btn btn-primary btn-lg btn-block"><i class="fa fa-search"></i> Etsi</button>
+			</div>
 		</div>
 	</form>
 

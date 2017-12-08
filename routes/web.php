@@ -15,4 +15,4 @@ Route::get('/', 'SearchController@index');
 
 Route::get('/search-bar', 'SearchController@foodSearch');
 
-Route::post('/result', 'SearchController@search');
+Route::get('/result', 'SearchController@search');

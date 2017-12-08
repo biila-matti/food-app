@@ -1,9 +1,76 @@
 
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import "node_modules/font-awesome/scss/font-awesome.scss";
 
 // Variables
 @import "variables";
 
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+body {
+	background: url('/storage/bg.jpg');
+	background-size:cover; 
+}
+
+a:hover {
+	cursor:pointer;
+}
+
+.logo-container {
+	max-width: 100px;
+	margin: 10vh auto 7vh;
+
+	img {
+		width: 100%;
+	}
+}
+
+.search-box {
+	max-width: 500px;
+
+	.panel {
+		border:none;
+		box-shadow: 0 0 10px rgba(0,0,0,.35);
+	}
+
+	.panel-default {
+	    padding: .2rem 1rem;
+	}
+}
+
+#selected, #foods {
+	background-color: #fff;
+	display: block;
+	list-style: none;
+}
+
+#foods {
+	padding: 1em;
+	overflow: hidden;
+}
+
+.ingredient-list {
+	padding: 1em;
+	
+	#selected{
+		padding-left: 0;
+
+		li {
+			background-color: #fff;
+			border-bottom: 1px #ffaaba solid;
+
+			a {
+				opacity: 0;
+				transition: .4s;
+			}
+
+			&:hover {
+				a {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

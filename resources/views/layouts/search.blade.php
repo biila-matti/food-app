@@ -15,11 +15,18 @@
 </head>
 <body>
 
-    <div class="container">
+    <div class="logo-container">
+        <img src="{{ asset('storage/chefhat.png') }}" alt="FoodApp">
+    </div>
+
+    <div class="container search-box">
         <div class="row">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    @yield('content')
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="panel panel-default">
+                    <h2 class="text-center">Mitä mulla on kaapissa?</h2>
+                    <div class="panel-body">
+                        @yield('content')
+                    </div>
                 </div>
             </div>
         </div>

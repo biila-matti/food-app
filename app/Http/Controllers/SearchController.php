@@ -26,7 +26,10 @@ class SearchController extends Controller
     }
 
     public function search(Request $request) {
-    	$array = explode(',',$request->input('keyword'));
+        $ingredients = $request->input('ingredients');
+        $array = explode(',',$ingredients);
+        unset($array[0]);
+
     	$matches = Meal::matches($array);
 
     	return view('search.results', [
